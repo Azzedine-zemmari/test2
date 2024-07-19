@@ -1,10 +1,12 @@
 const express = require("express")
-const mydb = require("./config/db")
-const rout = require("./routes/router")
 
 const app = express()
-app.use(rout)
+app.use(express.json())
+
+app.get("/",(req,res)=>{
+    res.status(200).send('hello youCode');
+})
 
 app.listen(3000,()=>{
-    console.log("serveur is running");
+    console.log("listen at port 3000");
 })
